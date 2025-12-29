@@ -1,1 +1,7 @@
-
+requests
+pandas
+numpy
+matplotlib
+pyarrow
+tqdm
+pytest
