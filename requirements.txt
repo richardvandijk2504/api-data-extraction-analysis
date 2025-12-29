@@ -1,7 +1,18 @@
+#Needed for HTTP requests
 requests
+
+#Data manipulation packages
 pandas
 numpy
+
+#Plotting/visualization
 matplotlib
+
+#Fast (Read/Write) CSV/Parquet I/O
 pyarrow
+
+#Progress bars for loops
 tqdm
+
+#Needed for testing scripts
 pytest
