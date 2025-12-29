@@ -1,0 +1,1 @@
+save normalized, flattened and cleaned data in CSV tables
