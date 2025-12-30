@@ -1,1 +1,1 @@
-save normalized, flattened and cleaned data in CSV tables
+Clean.py scripts saves normalized, flattened and cleaned data here in CSV tables as API_data_cleaned.csv
