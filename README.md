@@ -9,16 +9,16 @@ and produces a clean CSV suitable for exploratory data analysis (EDA) or machine
 
 Folder Structure
 ----------------
-data/raw/        #Raw JSON pages fetched from the OpenAlex API
-data/cleaned/    #Flattened, cleaned CSV from raw data
-data/final/      #Analysis-ready CSV with extracted features (top concepts, counts, dates)
+data/raw/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#Raw JSON pages fetched from the OpenAlex API  
+data/cleaned/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#Flattened, cleaned CSV from raw data  
+data/final/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#Analysis-ready CSV with extracted features (top concepts, counts, dates)  
 
-utils/pipeline.py #Script to fetch data from OpenAlex API with pagination
-utils/clean.py    #Script to flatten and clean raw JSON into a single CSV
-utils/extract.py  #Script to generate analysis-ready dataset with feature extraction
+utils/pipeline.py&nbsp;&nbsp;#Script to fetch data from OpenAlex API with pagination  
+utils/clean.py&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#Script to flatten and clean raw JSON into a single CSV  
+utils/extract.py&nbsp;&nbsp;&nbsp;&nbsp;#Script to generate analysis-ready dataset with feature extraction  
 
-requirements.txt
-    List of Python packages required: requests, pandas, numpy, matplotlib
+requirements.txt  
+&nbsp;&nbsp;&nbsp;&nbsp;List of Python packages required: requests, pandas, numpy, matplotlib  
 
 Usage Instructions
 ------------------
@@ -26,11 +26,11 @@ It is generally recommended to create a virtual environment to
 ensure a consistent package setup by opening a bash or powershell terminal
 and running the following lines:
   
-  python -m venv venv
-  venv/Scripts/activate (Windows)
-  source venv/bin/activate (macOS/Linux)
+  python -m venv venv  
+  venv/Scripts/activate (Windows)  
+  source venv/bin/activate (macOS/Linux)  
 
-After this the tutorial below can be followed in the same manner.
+After this the tutorial below can be followed in the same manner.  
 
 
 1. Install dependencies:
@@ -72,6 +72,6 @@ Potential Extensions
 
 Contact / Author
 ----------------
-Richard van Dijk
-Email: [richardvandijk2504@gmail.com]
-Portfolio: [https://github.com/richardvandijk2504]
+Richard van Dijk  
+Email: [richardvandijk2504@gmail.com]  
+Portfolio: [https://github.com/richardvandijk2504]  
