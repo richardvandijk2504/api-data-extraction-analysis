@@ -14,7 +14,7 @@ MAX_RECORDS = 300_000
 
 def fetch_API(RAW_DIR, BASE_URL, MAX_RECORDS, PER_PAGE):
   """connects to the API BASE_URL through a while loop which runs to MAX_RECORDS in steps of PER_PAGE.
-     Creates JSON file in RAW_DIR and saves data to it
+     Creates JSON file in RAW_DIR and saves raw data to it
      
      Parameters:
     RAW_DIR (Path): directory to save raw JSON
