@@ -24,16 +24,15 @@ requirements.txt
 
 Usage Instructions
 ------------------
-*It is generally recommended to create a virtual environment to 
+It is generally recommended to create a virtual environment to 
 ensure a consistent package setup by opening a bash or powershell terminal
 and running the following lines:
   
   python -m venv venv
   venv/Scripts/activate (Windows)
   source venv/bin/activate (macOS/Linux)
-  pip install -r requirements.txt
 
-After this the tutorial below can be followed in the same manner*
+After this the tutorial below can be followed in the same manner.
 
 
 1. Install dependencies:
