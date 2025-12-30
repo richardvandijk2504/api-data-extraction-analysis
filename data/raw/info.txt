@@ -1,1 +1,1 @@
-store the exact JSON returned by the (OpenAlex) API
+Pipeline.py stores the exact JSON pages returned by the (OpenAlex) API per page as page_xxxx.json
