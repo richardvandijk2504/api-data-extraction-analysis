@@ -9,18 +9,16 @@ and produces a clean CSV suitable for exploratory data analysis (EDA) or machine
 
 Folder Structure
 ----------------
-data/
-    raw/        # Raw JSON pages fetched from the OpenAlex API
-    cleaned/    # Flattened, cleaned CSV from raw data
-    final/      # Analysis-ready CSV with extracted features (top concepts, counts, dates)
+data/raw/        #Raw JSON pages fetched from the OpenAlex API
+data/cleaned/    #Flattened, cleaned CSV from raw data
+data/final/      #Analysis-ready CSV with extracted features (top concepts, counts, dates)
 
-utils/
-    pipeline.py # Script to fetch data from OpenAlex API with pagination
-    clean.py    # Script to flatten and clean raw JSON into a single CSV
-    extract.py  # Script to generate analysis-ready dataset with feature extraction
+utils/pipeline.py #Script to fetch data from OpenAlex API with pagination
+utils/clean.py    #Script to flatten and clean raw JSON into a single CSV
+utils/extract.py  #Script to generate analysis-ready dataset with feature extraction
 
 requirements.txt
-    List of Python packages required: requests, pandas, numpy, matplotlib, pyarrow, tqdm, pytest
+    List of Python packages required: requests, pandas, numpy, matplotlib
 
 Usage Instructions
 ------------------
