@@ -10,9 +10,9 @@ CLEAN_DIR.mkdir(parents=True, exist_ok=True)
 
 def flatten_data(page):
     """
-    Function takes list of dictionaries, page, as input from raw data (data/raw) and flattens 
-    the concept dictionary whilst ordering it by OpenAlex concept score (a metric of how well a concept
-    fits the paper) and aggregates it with flat raw data, returning a flat list of dictionaries. 
+    Takes list of dictionaries, page, and flattens the concept 
+    dictionary (ordered by OpenAlex concept score) and aggregates
+    it with flat raw data, returning a flat list of dictionaries. 
     """
     
     return {
@@ -33,9 +33,8 @@ def flatten_data(page):
 
 def clean_raw_data():
     """
-    Function that runs a for loop over all .json page files in data/raw, applies the flatten_data function
-    and creates a cleaned data file (data/cleaned/API_data_cleaned.csv) where the flattened data of all pages are joined.
-    
+    Runs for loop over all .json page files in data/raw, applies the flatten_data 
+    function and creates a cleaned data file (data/cleaned/API_data_cleaned.csv).
     Used as Main Function, requires no input.
     """
     rows = []
@@ -52,7 +51,7 @@ def clean_raw_data():
 
     output = CLEAN_DIR / "API_data_cleaned.csv"
     df.to_csv(output, index=False)
-    print(f"Saved cleaned data → {output} ({len(df)} rows)")
+    print(f"Saved cleaned data: {output} ({len(df)} rows)")
 
 if __name__ == "__main__":
     clean_raw_data()
