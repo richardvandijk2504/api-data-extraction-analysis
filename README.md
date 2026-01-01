@@ -48,8 +48,8 @@ After this the tutorial below can be followed in the same manner.
     - Saves `API_data_cleaned.csv` in `data/cleaned/`
 
 4. Extract features and prepare analysis-ready CSV:
-    python utils/extract.py
-    - Splits top N concepts into separate columns (set top_n in extract.py)
+    python utils/process.py
+    - Splits top N concepts into separate columns (set top_n in process.py)
     - Counts number of concepts per paper
     - Converts publication_year to numeric and publication_date to datetime to ensure proper types
     - Saves `API_data_final.csv` in `data/final/`
