@@ -3,53 +3,47 @@ import json
 from pathlib import Path
 from time import sleep
 
-#Define git-dir path
 RAW_DIR = Path("data/raw")
 RAW_DIR.mkdir(exist_ok=True)
 
-#Store API-Extraction parameters
+#API-Extraction parameters
 BASE_URL = "https://api.openalex.org/works"
-PER_PAGE = 200
-MAX_RECORDS = 300_000
+PAGE_STEP = 200
+MAX = 300_000
 
-def fetch_API(RAW_DIR, BASE_URL, MAX_RECORDS, PER_PAGE):
-  """connects to the API BASE_URL through a while loop which runs to MAX_RECORDS in steps of PER_PAGE.
-     Creates JSON file in RAW_DIR and saves raw data to it
-     
-     Parameters:
-    RAW_DIR (Path): directory to save raw JSON
-    BASE_URL (str): API endpoint
-    MAX_RECORDS (int): maximum total records to fetch
-    PER_PAGE (int): number of records per API call
-  """
-  cursor = "*"
-  total = 0
-  page_num = 1
+def get_Data(RAW_DIR, BASE_URL, MAX, PAGE_STEP):
+    """
+    Connects to the API Endpoint (OpenAlex) and requests data which runs 
+    to MAX_RECORDS in steps of PER_PAGE records to create a .json file in RAW_DIR 
+    and save raw data to it. Retuns raw data json file.
+    """
+    cursor = "*"
+    total = 0
+    page_num = 1
 
-  while total < MAX_RECORDS:
-      params = {"per-page": PER_PAGE, "cursor": cursor}
-      r = requests.get(BASE_URL, params=params)
-      if r.status_code != 200:
-          print(f"Error {r.status_code}")
-          break
-      #JSON-ify request r to data and store to results
-      data = r.json()
-      results = data.get("results", [])
-      if not results:
-          break
+    while total < MAX:
+        params = {"per-page": PAGE_STEP, "cursor": cursor}
+        r = requests.get(BASE_URL, params=params)
+        if r.status_code != 200:
+            print(f"Error {r.status_code}")
+            break
+        #JSON-ify request r to data and store to results
+        data = r.json()
+        results = data.get("results", [])
+        if not results:
+            break
 
-      with open(RAW_DIR / f"page_{page_num:04d}.json", "w") as f:
-          json.dump(results, f)
+        with open(RAW_DIR / f"page_{page_num:04d}.json", "w") as j_file:
+            json.dump(results, j_file)
 
-      total += len(results)
-      print(f"Page {page_num}, total records: {total}")
+        total += len(results)
+        print(f"Page {page_num}, total records: {total}")
 
-      cursor = data.get("meta", {}).get("next_cursor")
-      if not cursor:
-          break
+        cursor = data.get("meta", {}).get("next_cursor")
+        if not cursor:
+            break
 
-      page_num += 1
-      sleep(1)  #Sleep to limit process rate 
+        page_num += 1
 
 if __name__ == "__main__":
-    fetch_API(RAW_DIR, BASE_URL, MAX_RECORDS, PER_PAGE)
+    get_Data(RAW_DIR, BASE_URL, MAX, PAGE_STEP)
